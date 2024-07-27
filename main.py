@@ -16,6 +16,7 @@ chat_history = "" # изменяется
 new_username = "" # для ввода
 path_chat = "" # для ввода
 name_chat = "" # для ввода
+key_chat = "" #для ввода
 
 def reg():
 	print("""
@@ -55,13 +56,26 @@ FoKas Local Messenger. Сейчас Вы
 с названием mess. После, скопируйте
 путь и вставьте сюда.
 Вводите ---> """)
+	key_chat = input("""
+
+
+Супер! До конца осталось немного - 
+надо ввести специальный ключ для
+чата. Данный ключ нужен для защиты
+Вашего чата от посторонних. 
+Ключ может содержать только англий-
+ские буквы и цифры. Длина не огра-
+ничена
+Вводите ---> """)
 	
 	os.makedirs("./data/chats_info/" + name_chat, exist_ok=True)
 	os.makedirs(path_chat + "/" + name_chat, exist_ok=True)
 	ptof_chat = open("data/chats_info/" + name_chat + "/ptof.txt", "+x")
 	ptof_chat.write(path_chat)
 	username.write(new_username)
-	
+	chat_ptof = open(path_chat + "/" + name_chat + "/chat.txt", "+x")
+	key_ptof = open(path_chat + "/" + name_chat + "/key.txt", "+x")
+	key_ptof.write(key_chat)
 	setup.write("True")
 
 def login_status():
