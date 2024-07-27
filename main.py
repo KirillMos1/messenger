@@ -9,9 +9,11 @@ open_folder = "" # изменяется
 chat = "" # изменяется
 username = open("data/username.txt", "+w")
 setup = open("data/setup-ready.txt", "+w")
+chats = open("data/chats.txt", "+a")
 
 mess = "" # переменная для ввода
 user = username.read()
+
 chat_history = "" # изменяется
 new_username = "" # для ввода
 path_chat = "" # для ввода
@@ -76,6 +78,7 @@ FoKas Local Messenger. Сейчас Вы
 	chat_ptof = open(path_chat + "/" + name_chat + "/chat.txt", "+x")
 	key_ptof = open(path_chat + "/" + name_chat + "/key.txt", "+x")
 	key_ptof.write(key_chat)
+	chats.write(name_chat)
 	setup.write("True")
 
 def login_status():
