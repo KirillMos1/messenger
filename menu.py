@@ -3,4 +3,7 @@ from main import *
 
 
 def main_menu():
-	pass
+	main.os.system('cls' if os.name == 'nt' else 'clear')
+	print(f"""
+	
+Привет, {main.user}!""")

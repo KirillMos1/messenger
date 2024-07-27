@@ -1,5 +1,6 @@
 import os.path
 import time
+import subprocess
 from time import *
 
 import menu
@@ -32,6 +33,8 @@ FoKas Local Messenger. Сейчас Вы
 кальной сети обязательно
 			 
 			 """)
+	sleep(7)
+	subprocess.call('clear' if os.name == 'posix' else 'cls', shell=True)
 	new_username = input("""
 Введите Ваш никнейм.
 Никнейм нужен для того, чтобы участ-
@@ -40,13 +43,16 @@ FoKas Local Messenger. Сейчас Вы
 букв и цифр. Желательно, чтобы Ваш
 никнейм был не длиннее 10 символов.
 Вводите ---> """)
-	
+	time.sleep(2)
+	subprocess.call('clear' if os.name == 'posix' else 'cls', shell=True)
 	name_chat = input("""
 Отлично. Теперь нужно название для
 Вашего чата. Оно может состоять 
 только из английских букв. Длина
 до 10 символов.
 Вводите ---> """)
+	time.sleep(2)
+	subprocess.call('clear' if os.name == 'posix' else 'cls', shell=True)
 	path_chat = input("""
 
 									 
@@ -58,6 +64,8 @@ FoKas Local Messenger. Сейчас Вы
 с названием mess. После, скопируйте
 путь и вставьте сюда.
 Вводите ---> """)
+	time.sleep(2)
+	subprocess.call('clear' if os.name == 'posix' else 'cls', shell=True)
 	key_chat = input("""
 
 
@@ -69,6 +77,8 @@ FoKas Local Messenger. Сейчас Вы
 ские буквы и цифры. Длина не огра-
 ничена
 Вводите ---> """)
+	time.sleep(7)
+	subprocess.call('clear' if os.name == 'posix' else 'cls', shell=True)
 	
 	os.makedirs("./data/chats_info/" + name_chat, exist_ok=True)
 	os.makedirs(path_chat + "/" + name_chat, exist_ok=True)
@@ -80,6 +90,9 @@ FoKas Local Messenger. Сейчас Вы
 	key_ptof.write(key_chat)
 	chats.write(name_chat)
 	setup.write("True")
+
+	global user
+	user = username.read()
 
 def login_status():
 	if bool(setup.read()):
