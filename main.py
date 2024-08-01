@@ -1,7 +1,7 @@
 import os.path
 import time
 import subprocess
-from time import *
+from time import sleep
 
 import menu
 
