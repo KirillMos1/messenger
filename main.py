@@ -95,7 +95,7 @@ FoKas Local Messenger. Сейчас Вы
 	user = username.read()
 
 def login_status():
-	if bool(setup.read()):
+	if bool(setup.read()) == True:
 		menu.main_menu()
 	else:
 		reg()
