@@ -4,11 +4,19 @@ def t(chat_name):
 	try:
 		chat_ptof = open("/data/chats_info/" + chat_name + "/", "r")
 		chat_chat = open("/data/chats_info/" + chat_name + "/" + "chat.txt", "+a")
+		chat_key = open("/data/chats_info/" + chat_name + "/" + "key.txt", "r")
+		key_checking = input("""
+Введите ключ что бы получить доступ
+к чату
+Вводите ---> """)
+		if key_checking == chat_key.read():
+			print("""
+Доступ получен""")
 	except:
 		main.os.system('cls' if os.name == 'nt' else 'clear')
 		print("""
 Ошибка InputError
-Описание: Введено несуществуещее название
+Описание: Введено несуществующее название
 чата
 Код: 1
 Вас перенаправит обратно в меню""")
