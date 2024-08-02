@@ -1,6 +1,6 @@
 import os.path
 import time
-import subprocess
+import subprocess, talking
 from time import sleep
 
 import menu
