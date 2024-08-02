@@ -4,11 +4,14 @@ def s():
 	chats_list = []
 	for i in main.chats:
 		chats_list.append(i)
-	try:
-		print("""
+	main.os.system('cls' if os.name == 'nt' else 'clear')
+	print("""
 Выберите чат:""")
-		for j in chats_list:
-			print(f"\n{j}")
-		select_chat_list = input("""
+
+	for j in chats_list:
+		print(f"\n{j}")
+
+	select_chat_list = input("""
 
 Вводите ---> """)
+	talking.t(select_chat_list)
