@@ -15,15 +15,26 @@ def t(chat_name):
 Доступ получен""")
 			main.sleep(3)
 			main.os.system('cls' if os.name == 'nt' else 'clear')
-			command = input("""
+			while True:
+				command = input("""
 Выберите действие:
 h - прочитать переписку
 s - отправить сообщение
 d - удалить чат
+e - выйти
 Вводите ---> """)
-			if command == "h":
-				for i in chat_chat.read():
-					print(i)
+				if command == "h":
+					for i in chat_chat.read():
+						print(i)
+				elif command == "s":
+					mess_prefix = "[" + main.username + "]"
+					message = input("""
+Введите сообщение
+---> """)
+					message = mess_prefix + " " + message
+					chat_chat.write(message)
+				elif command == "e":
+					menu.main_menu()
 		else:
 			main.os.system('cls' if os.name == 'nt' else 'clear')
 			print("""
