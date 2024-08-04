@@ -10,8 +10,17 @@ def t(chat_name):
 к чату
 Вводите ---> """)
 		if key_checking == chat_key.read():
+			main.os.system('cls' if os.name == 'nt' else 'clear')
 			print("""
 Доступ получен""")
+		else:
+			main.os.system('cls' if os.name == 'nt' else 'clear')
+			print("""
+К сожалению, вы ввели неправильный пароль.
+Доступ не предоставляется.
+Возвращаем Вас в меню""")
+		main.sleep(5)
+		menu.main_menu()
 	except:
 		main.os.system('cls' if os.name == 'nt' else 'clear')
 		print("""
