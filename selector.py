@@ -1,4 +1,4 @@
-import main, menu, nick_edit, create_chat, talking
+import main, menu, nick_edit, create_chat, talking, os
 
 def s():
 	chats_list = []

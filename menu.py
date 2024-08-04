@@ -1,4 +1,4 @@
-import main, selector, nick_edit, create_chat, invite_chat, talking
+import main, selector, nick_edit, create_chat, invite_chat, talking, os
 
 
 def main_menu():

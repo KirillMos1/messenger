@@ -1,4 +1,4 @@
-import main, menu, selector, create_chat, nick_edit, invite_chat
+import main, menu, selector, create_chat, nick_edit, invite_chat, os
 
 def t(chat_name):
 	try:
@@ -13,6 +13,17 @@ def t(chat_name):
 			main.os.system('cls' if os.name == 'nt' else 'clear')
 			print("""
 Доступ получен""")
+			main.sleep(3)
+			main.os.system('cls' if os.name == 'nt' else 'clear')
+			command = input("""
+Выберите действие:
+h - прочитать переписку
+s - отправить сообщение
+d - удалить чат
+Вводите ---> """)
+			if command == "h":
+				for i in chat_chat.read():
+					print(i)
 		else:
 			main.os.system('cls' if os.name == 'nt' else 'clear')
 			print("""
